@@ -93,6 +93,17 @@
         "column2",
         "column3"
       ]
+    },
+    "quotes": {
+      "type": "quotes",
+      "blocks": {
+        "quote": {
+          "type": "quote"
+        }
+      },
+      "block_order": [
+        "quotes"
+      ]
     }
   },
   "order": [
@@ -101,6 +112,7 @@
     "featured_products",
     "collage",
     "video",
-    "multi_column"
+    "multi_column",
+    "quotes"
   ]
 }
