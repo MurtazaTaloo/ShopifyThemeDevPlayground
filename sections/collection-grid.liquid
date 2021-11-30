@@ -1,7 +1,63 @@
+<h1>{{section.settings.collection-grid-heading}}</h1>
+<div class="collection-grid">
+  {% for block in section.blocks %}
+    <h1>Featured Collection</h1>
+    <div class="collection-grid-image" >
+      <img src="{{block.settings.image | image_url }}" style="width:{{block.settings.width-selection}}%;">
+      <!-- <button class="collection-grid-buttons">Explore</button> -->
+    </div>
+  {% endfor %}
+</div>
+
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
+    "name": "Collection Grid",
+    "settings": [
+      {
+        "id": "collection-grid-heading",
+        "type": "text",
+        "label": "Collection Heading",
+        "default": "Featured Collection"
+      }
+    ],
+    "blocks":[
+      {
+        "name": "Collection Image",
+        "type": "collection-image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "width-selection",
+            "label": "Width",
+            "options": [
+              {
+                "value": "100",
+                "label": "100 %"
+              },
+              {
+                "value": "60",
+                "label": "60 %"
+              },
+              {
+                "value": "40",
+                "label": "40 %"
+              }
+            ]
+          },
+          {
+            "type": "url",
+            "id": "url",
+            "label": "url"
+          }
+        ]
+      }
+    ]
   }
 {% endschema %}
 
